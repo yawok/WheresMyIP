@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>IP Info</title>
-	</head>
-	<body style='display:flex;flex-direction:row;align-items:center;justify-content:center'>
-		<div
-			style='display: flex; flex-direction:column; align-items:center;justify-content:center; background-color:#beb0b0; width:80%;'>
-			<p><span>IP address: </span>{{ ip }}</p>
-			<p><span>City: </span>{{ city }}</p>
-			<p><span>Region:</span>{{ region }}</p>
-			<p><span>Country: </span>{{ country }}</p>
-			<p><span>Coordinates: </span>{{ loc }}</p>
-			<p><span>Nearest organization: </span>{{ org }}</p>
-			<p><span>Timezone: </span>{{ timezone }}</p>
-			<p><a href="{{ readme }}">Read more about api</a></p>
-		</div>
-	</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card info">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong><em>IP Address</em></strong> {{ ip }}</li>
+    <li class="list-group-item"><strong><em>City</em></strong> {{ city }}</li>
+    <li class="list-group-item"><strong><em>Region</em></strong> {{ region }}</li>
+		<li class="list-group-item"><strong><em>Country</em></strong> {{ country }}</li>
+    <li class="list-group-item"><strong><em>Coordinates</em></strong> {{ loc }}</li>
+    <li class="list-group-item"><strong><em>Nearest organization</em></strong> {{ org }}</li>
+    <li class="list-group-item"><strong><em>Current Timezone</em></strong> {{ timezone }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="{{ readme }}">Read more about this api</a>
+  </div>
+</div>
+{% endblock content %}
